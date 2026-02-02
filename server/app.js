@@ -33,4 +33,8 @@ app.use("/api/cars", carsRouter);
 
 const PORT = process.env.PORT || 5000;
 
+app.listen(PORT, ()=>{
+  condole.log("app is runnung ")
+})
+
 export default app
