@@ -1,7 +1,13 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
+// Base URL for backend API
+// - for local development defaults to your local server
+// - can be overridden with VITE_BASE_URL in client env (use this for deployment)
+const BASE_URL =
+  import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
 
 const api = async (path, options = {}) => {
-  const url = `${BASE_URL.replace(/\/$/, '')}${path.startsWith('/') ? path : `/${path}`}`;
+  const url = `${BASE_URL.replace(/\/$/, '')}${
+    path.startsWith('/') ? path : `/${path}`
+  }`;
   const { headers: optHeaders, ...rest } = options;
   const res = await fetch(url, {
     ...rest,

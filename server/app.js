@@ -26,9 +26,10 @@ app.set("trust proxy", 1);
 app.use(
   cors({
     origin: clientOrigin,
-    credentials: true,
+    credentials: true
   })
 );
+
 
 // ✅ Middlewares
 app.use(express.json());
